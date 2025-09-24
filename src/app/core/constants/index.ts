@@ -1,1 +1,1 @@
-export * as icons from './icon.constant'
+export * from './icon.constant'

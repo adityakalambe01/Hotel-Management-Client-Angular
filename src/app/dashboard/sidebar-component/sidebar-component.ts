@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import {ISidebarItem} from '../../core/models';
 import {CommonModule} from '@angular/common';
-import {icons} from '../../core/constants/icon.constant';
+import {icons} from '../../core/constants';
 import {LucidIconWrapper} from '../../shared/components/lucid-icon-wrapper/lucid-icon-wrapper';
 
 @Component({
