@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ThemeModeSwitcher} from '../../services/theme/theme-mode-switcher';
+import {ThemeModeSwitcher} from '../../core/services/theme/theme-mode-switcher';
 
 @Component({
   selector: 'app-theme-toggle-component',

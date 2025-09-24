@@ -6,17 +6,17 @@ import { Injectable } from '@angular/core';
 export class LocalStorage {
 
   constructor() { }
-  protected setItem(key: string, value: any) {
+  setItem(key: string, value: any) {
     localStorage.setItem(key, value);
   }
-  protected getItem(key: string) {
+  getItem(key: string) {
     return localStorage.getItem(key);
   }
-  protected removeItem(key: string) {
+  removeItem(key: string) {
     localStorage.removeItem(key);
   }
 
-  protected clear() {
+  clear() {
     localStorage.clear();
   }
 }

@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import {inject, Injectable} from '@angular/core';
 import {HttpClientService} from '../http-client-service';
 import {Observable} from 'rxjs';
 import {IHttpSuccessResponse, IUser} from '../../../models';
+import {LocalStorage} from '../../storage/local-storage';
 
 interface ILoginData {
   token: string;
@@ -19,13 +20,30 @@ interface IRegisterData {
   providedIn: 'root'
 })
 export class AuthService extends HttpClientService{
-    protected url = 'http://localhost:3000/api/dev';
+    private localStorageService:LocalStorage = inject(LocalStorage);
+
     login(data:any):Observable<IHttpSuccessResponse<ILoginData>>{
-      return this.post<typeof data, IHttpSuccessResponse<ILoginData>>(`${this.url}/auth/login`, data);
+      return this.post<typeof data, IHttpSuccessResponse<ILoginData>>(`/auth/login`, data);
     }
 
     register(data:IRegisterData):Observable<IHttpSuccessResponse<IUser>>{
-      return this.post<typeof data, IHttpSuccessResponse<IUser>>(`${this.url}/auth/register`, data);
+      return this.post<typeof data, IHttpSuccessResponse<IUser>>(`/auth/register`, data);
+    }
+
+    setToken(token:string){
+      this.localStorageService.setItem('token', token);
+    }
+
+    getToken(){
+      return this.localStorageService.getItem('token');
+    }
+
+    isAuthenticated(){
+      return !!this.getToken();
+    }
+
+    logout(){
+      this.localStorageService.removeItem('token');
     }
 
 }

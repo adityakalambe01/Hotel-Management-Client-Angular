@@ -29,7 +29,8 @@
           required
         />
         <div class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500">
-          <lucide-icon [name]="icons.user" size="16"></lucide-icon>
+
+          <app-lucid-icon-wrapper [iconName]="icons.user"></app-lucid-icon-wrapper>
         </div>
       </div>
     </div>
@@ -47,7 +48,7 @@
           required
         />
         <div class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500">
-          <lucide-icon [name]="icons.email" size="16"></lucide-icon>
+          <app-lucid-icon-wrapper [iconName]="icons.email"></app-lucid-icon-wrapper>
         </div>
       </div>
 
@@ -66,7 +67,7 @@
           required
         />
         <div class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500">
-          <lucide-icon [name]="icons.phone" size="16"></lucide-icon>
+          <app-lucid-icon-wrapper [iconName]="icons.phone"></app-lucid-icon-wrapper>
         </div>
       </div>
 
@@ -87,10 +88,11 @@
         <button type="button"
                 class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-500"
                 (click)="togglePassword()">
-          <lucide-icon [name]="showPassword? icons.eye.on:icons.eye.off" size="16"></lucide-icon>
+          <app-lucid-icon-wrapper [iconName]="showPassword? icons.eye.on:icons.eye.off"></app-lucid-icon-wrapper>
+
         </button>
         <div class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500">
-          <lucide-icon [name]="showPassword? icons.password.visible:icons.password.hidden" size="16"></lucide-icon>
+          <app-lucid-icon-wrapper [iconName]="showPassword? icons.password.visible:icons.password.hidden" size="16"></app-lucid-icon-wrapper>
         </div>
       </div>
     </div>
@@ -108,7 +110,7 @@
           required
         />
         <div class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500">
-          <lucide-icon [name]="icons.password.hidden" size="16"></lucide-icon>
+          <app-lucid-icon-wrapper [iconName]="icons.password.hidden" size="16"></app-lucid-icon-wrapper>
         </div>
       </div>
     </div>
@@ -133,19 +135,15 @@
     <!-- Submit -->
     <button
       type="submit"
-      class="w-full bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg px-4 py-2 disabled:opacity-50"
+      class="w-full flex items-center justify-center space-x-2 rounded-lg bg-emerald-600 px-4 py-2 text-white hover:bg-emerald-700 font-[family-name:var(--font-dm-sans)] disabled:opacity-50"
       [disabled]="isLoading || registerForm.invalid"
     >
       @if(isLoading){
-        <div class="flex items-center space-x-2">
           <div class="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
           <span>Creating account...</span>
-        </div>
       }@else{
-        <div class="flex items-center space-x-2">
-          <span>➕</span>
+          <app-lucid-icon-wrapper [iconName]="icons.organization"></app-lucid-icon-wrapper>
           <span>Create Account</span>
-        </div>
       }
     </button>
   </form>

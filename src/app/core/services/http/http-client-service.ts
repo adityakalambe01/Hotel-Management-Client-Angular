@@ -7,6 +7,7 @@ import {IHttpErrorResponse} from '../../models';
   providedIn: 'root'
 })
 export class HttpClientService {
+  private baseUrl = 'http://localhost:3000/api/dev';
   constructor(private http: HttpClient) {
   }
 
@@ -40,7 +41,6 @@ export class HttpClientService {
     for(const subscription of subscriptions){
       if(subscription){
         subscription.unsubscribe();
-        console.log('Unsubscribed');
       }
     }
   }

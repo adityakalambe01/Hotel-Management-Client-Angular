@@ -4,11 +4,13 @@ import {CommonModule} from '@angular/common';
 import {RouterLink} from '@angular/router';
 import {AuthService} from '../../core/services/http/auth/auth-service';
 import {IHttpErrorResponse, IHttpSuccessResponse} from '../../core/models';
-import {Observable, Subscription} from 'rxjs';
+import {Subscription} from 'rxjs';
+import {LucidIconWrapper} from '../../shared/components/lucid-icon-wrapper/lucid-icon-wrapper';
+import {icons} from '../../core/constants/icon.constant';
 
 @Component({
   selector: 'app-login-component',
-  imports: [FormsModule, CommonModule, ReactiveFormsModule, RouterLink],
+  imports: [FormsModule, CommonModule, ReactiveFormsModule, RouterLink, LucidIconWrapper],
   templateUrl: './login-component.html',
   styleUrl: './login-component.css'
 })
@@ -16,6 +18,8 @@ export class LoginComponent implements OnInit, OnDestroy{
   protected loginForm!: FormGroup;
   protected showPassword:boolean = false;
   protected isLoading:boolean = false;
+
+  protected readonly icons = icons;
 
   private loginSubscription!:Subscription;
 
@@ -41,10 +45,10 @@ export class LoginComponent implements OnInit, OnDestroy{
     const {email, password} = this.loginForm.value;
     this.loginSubscription = this.authService.login({email, password}).subscribe({
       next: (response:IHttpSuccessResponse)=>{
-        console.log(response);
+        this.authService.setToken(response.data.token);
       },
       error: (error:IHttpErrorResponse)=>{
-        console.log(error);
+        console.error(error);
       },
       complete: ()=>{}
     })

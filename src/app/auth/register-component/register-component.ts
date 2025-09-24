@@ -5,11 +5,12 @@ import {RouterLink} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {AuthService} from '../../core/services/http/auth/auth-service';
 import {IHttpErrorResponse, IHttpSuccessResponse} from '../../core/models';
-import {LucideAngularModule, EyeOff, Eye, AtSign, Phone, User, Lock, LockOpen} from 'lucide-angular';
+import {icons} from '../../core/constants/icon.constant';
+import {LucidIconWrapper} from '../../shared/components/lucid-icon-wrapper/lucid-icon-wrapper';
 
 @Component({
   selector: 'app-register-component',
-  imports: [ReactiveFormsModule, CommonModule, FormsModule, RouterLink, LucideAngularModule],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, RouterLink, LucidIconWrapper],
   templateUrl: './register-component.html',
   styleUrl: './register-component.css'
 })
@@ -19,20 +20,7 @@ export class RegisterComponent implements OnInit, OnDestroy{
   protected isLoading = false;
   private registerSubscription!:Subscription;
 
-  protected readonly icons = {
-    eye:{
-      on: Eye,
-      off: EyeOff
-    },
-    email: AtSign,
-    phone: Phone,
-    user: User,
-    password: {
-      hidden: Lock,
-      visible: LockOpen
-    }
-
-  }
+  protected readonly icons = icons
 
   constructor(private authService:AuthService) {
   }
