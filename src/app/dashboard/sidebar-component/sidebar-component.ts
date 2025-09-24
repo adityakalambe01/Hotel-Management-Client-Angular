@@ -15,17 +15,22 @@ export class SidebarComponent {
   protected iconSize:number = 19;
   items: ISidebarItem[] = [
     { label: 'Dashboard', icon: icons.sidebar.dashboard, route: '/dashboard' },
+    { label: 'Tenants', icon: icons.sidebar.users, route: '/dashboard' },
+    { label: 'Hotels', icon: icons.sidebar.hotels, route: '/dashboard' },
+    { label: 'Revenue', icon: icons.sidebar.revenue, route: '/dashboard' },
+    { label: 'Analytics', icon: icons.sidebar.analytics, route: '/dashboard' },
+    { label: 'Subscriptions', icon: icons.sidebar.card, route: '/dashboard' },
     {
       label: 'Settings',
       icon: icons.settings.normal,
       children: [
-        { label: 'System', route: '/settings/system', icon: icons.settings.system },
-        { label: 'Profile', route: '/settings/profile', icon: icons.settings.profile }
+        { label: 'System', icon: icons.settings.system, route: '/settings/system' },
+        { label: 'Profile', icon: icons.settings.profile, route: '/settings/profile' }
       ]
     },
     { label: 'Kanban', icon: icons.sidebar.analytics, badge: 'Pro', route: '/kanban' },
-    { label: 'Inbox', icon: icons.sidebar.card, badge: '3', route: '/inbox' },
-    { label: 'Users', icon: icons.sidebar.users, route: '/users' },
+    { label: 'Inbox', icon: icons.email, badge: '3', route: '/inbox' },
+    { label: 'Logout', icon: icons.logout, route: '/logout' },
   ];
 
   toggleDropdown(item: ISidebarItem) {

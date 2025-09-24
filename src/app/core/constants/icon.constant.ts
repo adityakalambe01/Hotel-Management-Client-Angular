@@ -1,14 +1,13 @@
 import {
-  AtSign,
   Building2, ChartColumn, ChevronDown, ChevronLeft, ChevronRight, ChevronUp, CreditCard, DollarSign,
   Eye,
   EyeOff,
   LayoutDashboard,
   Lock,
-  LockOpen,
+  LockOpen, LogOut,
   Mail, MonitorCog,
   Phone, Settings, Shield,
-  User, UserCog, UserRoundCog,
+  User, UserRoundCog,
   Users
 } from 'lucide-angular';
 
@@ -45,5 +44,6 @@ export const icons = {
     down: ChevronDown,
     left: ChevronLeft,
     right: ChevronRight,
-  }
+  },
+  logout:LogOut
 }
