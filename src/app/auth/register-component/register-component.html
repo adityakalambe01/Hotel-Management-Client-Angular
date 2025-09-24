@@ -1,0 +1,168 @@
+<!-- Card -->
+<div
+  class="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg p-6"
+>
+  <div class="mb-4 text-center">
+    <h2
+      class="text-2xl font-bold text-gray-900 font-space-grotesk"
+    >
+      Create Account
+    </h2>
+    <p class="text-sm text-gray-600 font-dm-sans">
+      Start managing your hotel properties today
+    </p>
+  </div>
+
+
+  <form [formGroup]="registerForm" (ngSubmit)="handleSubmit()" class="space-y-4">
+
+    <!-- Full Name -->
+    <div class="space-y-2">
+      <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+      <div class="relative">
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          placeholder="Enter your full name"
+          class="pl-10 block w-full rounded-lg border border-gray-300 p-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-emerald-500"
+          required
+        />
+        <div class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500">
+          <lucide-icon [name]="icons.user" size="16"></lucide-icon>
+        </div>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="space-y-2">
+      <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+      <div class="relative">
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="Enter your email"
+          class="pl-10 block w-full rounded-lg border border-gray-300 p-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-emerald-500"
+          required
+        />
+        <div class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500">
+          <lucide-icon [name]="icons.email" size="16"></lucide-icon>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Phone -->
+    <div class="space-y-2">
+      <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+      <div class="relative">
+        <input
+          id="phone"
+          type="tel"
+          formControlName="phone"
+          placeholder="Enter your phone number"
+          class="pl-10 block w-full rounded-lg border border-gray-300 p-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-emerald-500"
+          required
+        />
+        <div class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500">
+          <lucide-icon [name]="icons.phone" size="16"></lucide-icon>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Password -->
+    <div class="space-y-2">
+      <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+      <div class="relative">
+        <input
+          id="password"
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="password"
+          placeholder="Create a password"
+          class="pl-10 pr-10 block w-full rounded-lg border border-gray-300 p-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-emerald-500"
+          required
+        />
+        <button type="button"
+                class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-500"
+                (click)="togglePassword()">
+          <lucide-icon [name]="showPassword? icons.eye.on:icons.eye.off" size="16"></lucide-icon>
+        </button>
+        <div class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500">
+          <lucide-icon [name]="showPassword? icons.password.visible:icons.password.hidden" size="16"></lucide-icon>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="space-y-2">
+      <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+      <div class="relative">
+        <input
+          id="confirmPassword"
+          type="password"
+          formControlName="confirmPassword"
+          placeholder="Confirm your password"
+          class="pl-10 block w-full rounded-lg border border-gray-300 p-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-emerald-500"
+          required
+        />
+        <div class="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500">
+          <lucide-icon [name]="icons.password.hidden" size="16"></lucide-icon>
+        </div>
+      </div>
+    </div>
+
+    <!-- Terms & Conditions -->
+    <div class="flex items-start space-x-2">
+      <input
+        id="terms"
+        type="checkbox"
+        formControlName="terms"
+        class="h-4 w-4 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500 mt-1"
+        required
+      />
+      <label for="terms" class="text-sm text-gray-700 leading-relaxed">
+        I agree to the
+        <a href="/terms" class="text-emerald-600 hover:text-emerald-700">Terms of Service</a>
+        and
+        <a href="/privacy" class="text-emerald-600 hover:text-emerald-700">Privacy Policy</a>.
+      </label>
+    </div>
+
+    <!-- Submit -->
+    <button
+      type="submit"
+      class="w-full bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg px-4 py-2 disabled:opacity-50"
+      [disabled]="isLoading || registerForm.invalid"
+    >
+      @if(isLoading){
+        <div class="flex items-center space-x-2">
+          <div class="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+          <span>Creating account...</span>
+        </div>
+      }@else{
+        <div class="flex items-center space-x-2">
+          <span>➕</span>
+          <span>Create Account</span>
+        </div>
+      }
+    </button>
+  </form>
+
+  <!-- Footer -->
+  <div class="text-center mt-6">
+    <p class="text-sm text-gray-600 font-dm-sans">
+      Already have an account?
+      <a
+        routerLink="/auth/login"
+        class="text-emerald-600 hover:text-emerald-700 font-medium"
+      >
+        Sign in
+      </a>
+    </p>
+  </div>
+
+
+
+</div>
