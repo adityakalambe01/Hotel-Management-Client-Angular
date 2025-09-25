@@ -1,0 +1,15 @@
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+  <app-card *ngFor="let stat of subStats">
+    <app-card-header [className]="'flex flex-row items-center justify-between space-y-0 pb-2'">
+      <app-card-title [className]="'text-sm font-medium'">{{ stat.title }}</app-card-title>
+      <app-lucid-icon-wrapper [iconName]="stat.icon" [className]="'h-4 w-4 text-muted-foreground'"></app-lucid-icon-wrapper>
+    </app-card-header>
+
+    <app-card-content>
+      <div class="text-2xl font-bold">
+        {{ stat.value }}
+      </div>
+      <p class="text-xs text-muted-foreground">{{ stat.subtitle }}</p>
+    </app-card-content>
+  </app-card>
+</div>

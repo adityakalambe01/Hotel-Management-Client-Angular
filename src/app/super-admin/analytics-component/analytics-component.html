@@ -1,0 +1,54 @@
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+  <app-card>
+    <app-card-header className="flex flex-row items-center justify-between space-y-0 pb-2">
+      <app-card-title className="text-sm font-medium leading-none">Total Revenue</app-card-title>
+      <app-lucid-icon-wrapper [iconName]="icons.sidebar.revenue" ></app-lucid-icon-wrapper>
+    </app-card-header>
+    <app-card-content>
+      <div class="text-2xl font-bold">$2.44M</div>
+      <div class="flex items-center text-xs text-green-600 gap-1">
+        <app-lucid-icon-wrapper [iconName]="icons.trending.up" [iconSize]="12"></app-lucid-icon-wrapper>
+        +15.2% from last month
+      </div>
+    </app-card-content>
+  </app-card>
+  <app-card>
+    <app-card-header className="flex flex-row items-center justify-between space-y-0 pb-2">
+      <app-card-title className="text-sm font-medium leading-none">Active Hotels</app-card-title>
+      <app-lucid-icon-wrapper [iconName]="icons.sidebar.hotels" ></app-lucid-icon-wrapper>
+    </app-card-header>
+    <app-card-content>
+      <div class="text-2xl font-bold">475</div>
+      <div class="flex items-center text-xs text-green-600 gap-1">
+        <app-lucid-icon-wrapper [iconName]="icons.trending.up" [iconSize]="12"></app-lucid-icon-wrapper>
+        +12 new this month
+      </div>
+    </app-card-content>
+  </app-card>
+  <app-card>
+    <app-card-header className="flex flex-row items-center justify-between space-y-0 pb-2">
+      <app-card-title className="text-sm font-medium leading-none">Total Bookings</app-card-title>
+      <app-lucid-icon-wrapper [iconName]="icons.calender" ></app-lucid-icon-wrapper>
+    </app-card-header>
+    <app-card-content>
+      <div class="text-2xl font-bold">3,750</div>
+      <div class="flex items-center text-xs text-green-600 gap-1">
+        <app-lucid-icon-wrapper [iconName]="icons.trending.up" [iconSize]="12"></app-lucid-icon-wrapper>
+        +8.5% from last month
+      </div>
+    </app-card-content>
+  </app-card>
+  <app-card>
+    <app-card-header [className]="'flex flex-row items-center justify-between space-y-0 pb-2'">
+      <app-card-title [className]="'text-sm font-medium leading-none'">Avg Occupancy</app-card-title>
+      <app-lucid-icon-wrapper [iconName]="icons.percentage" ></app-lucid-icon-wrapper>
+    </app-card-header>
+    <app-card-content>
+      <div class="text-2xl font-bold">81.2%</div>
+      <div class="flex items-center text-xs text-red-600 gap-1">
+        <app-lucid-icon-wrapper [iconName]="icons.trending.down" [iconSize]="12"></app-lucid-icon-wrapper>
+        -2.1% from last month
+      </div>
+    </app-card-content>
+  </app-card>
+</div>

@@ -1,0 +1,17 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+  @for(stat of stats; track stat.title){
+    <app-card>
+      <app-card-header [className]="'flex flex-row items-center justify-between space-y-0 pb-2'">
+        <app-card-title [className]="'text-sm font-medium text-gray-600'">{{ stat.title }}</app-card-title>
+        <app-lucid-icon-wrapper [iconName]="stat.iconName" [iconSize]="20" [className]="stat.color" [strokeWidth]="2.2"></app-lucid-icon-wrapper>
+      </app-card-header>
+
+      <app-card-content>
+        <div class="text-2xl font-bold text-gray-900" [ngStyle]="{'font-family': 'var(--font-space-grotesk)'}">
+          {{ stat.value }}
+        </div>
+        <p class="text-xs font-medium" [ngClass]="stat.changeColor">{{ stat.change }} from last month</p>
+      </app-card-content>
+    </app-card>
+  }
+</div>
