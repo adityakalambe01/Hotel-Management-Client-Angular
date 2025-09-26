@@ -5,6 +5,8 @@ import {HotelsComponent} from './hotels-component/hotels-component';
 import {RevenueComponent} from './revenue-component/revenue-component';
 import {SubscriptionsComponent} from './subscriptions-component/subscriptions-component';
 import {TenantsComponent} from './tenants-component/tenants-component';
+import {PermissionComponent} from './permission-component/permission-component';
+import {ThemeComponent} from './theme-component/theme-component';
 
 export const superAdminRoutes:Routes = [
   {
@@ -33,6 +35,14 @@ export const superAdminRoutes:Routes = [
       {
         path: 'profile',
         loadComponent: () => import('./settings/profile-settings-component/profile-settings-component').then(m => m.ProfileSettingsComponent)
+      },
+      {
+        path: 'permissions',
+        component: PermissionComponent
+      },
+      {
+        path: 'theme',
+        component: ThemeComponent
       },
       {
         path: '',

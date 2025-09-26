@@ -17,7 +17,8 @@ import {
   NgApexchartsModule,
   ApexMarkers
 } from "ng-apexcharts";
-import {RevenueContributorsChart} from '../../shared/components/revenue-contributors-chart/revenue-contributors-chart';
+import {RevenueContributorsChart} from './revenue-contributors-chart/revenue-contributors-chart';
+import {TenantManagement} from './tenant-management/tenant-management';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -36,7 +37,7 @@ export type ChartOptions = {
 
 @Component({
   selector: 'app-dashboard-component',
-  imports: [CardModule, LucidIconWrapper, CommonModule, NgApexchartsModule, RevenueContributorsChart],
+  imports: [CardModule, LucidIconWrapper, CommonModule, NgApexchartsModule, RevenueContributorsChart, TenantManagement],
   templateUrl: './dashboard-component.html',
   styleUrl: './dashboard-component.css'
 })
@@ -124,54 +125,5 @@ export class DashboardComponent {
 
 
 
-  // Dummy roles data
-  roles = [
-    { name: 'Admin', status: 'active', userCount: 3 },
-    { name: 'Manager', status: 'active', userCount: 5 },
-    { name: 'Editor', status: 'inactive', userCount: 2 },
-    { name: 'Viewer', status: 'active', userCount: 10 },
-  ];
 
-  // Dummy users data
-  users = [
-    { name: 'Alice', status: 'active' },
-    { name: 'Bob', status: 'inactive' },
-    { name: 'Charlie', status: 'active' },
-    { name: 'Dave', status: 'active' },
-  ];
-
-  // Dummy permissions data
-  permissions = [
-    { name: 'Read' },
-    { name: 'Write' },
-    { name: 'Delete' },
-    { name: 'Manage Users' },
-  ];
-
-  permissionStats = [
-    {
-      title: 'Total Roles',
-      value: this.roles.length,
-      subtitle: `${this.roles.filter(r => r.status === 'active').length} active roles`,
-      icon: icons.sidebar.shield,
-    },
-    {
-      title: 'Total Users',
-      value: this.roles.reduce((sum, role) => sum + role.userCount, 0),
-      subtitle: 'Across all roles',
-      icon: icons.sidebar.users,
-    },
-    {
-      title: 'Active Users',
-      value: this.users.filter(u => u.status === 'active').length,
-      subtitle: 'Currently active',
-      icon: icons.userCheck,
-    },
-    {
-      title: 'Permissions',
-      value: this.permissions.length,
-      subtitle: 'Available permissions',
-      icon: icons.key,
-    },
-  ];
 }

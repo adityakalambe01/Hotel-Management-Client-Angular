@@ -1,13 +1,14 @@
 import {
   Bed,
-  Building2, Calendar, ChartColumn, ChevronDown, ChevronLeft, ChevronRight, ChevronUp, CreditCard, DollarSign,
+  Building2, Calendar, ChartColumn, ChevronDown, ChevronLeft, ChevronRight, ChevronUp, CreditCard, DollarSign, Eclipse,
+  Ellipsis, EllipsisVertical,
   Eye,
-  EyeOff, Key,
+  EyeOff, Funnel, Key,
   LayoutDashboard,
   Lock,
   LockOpen, LogOut,
-  Mail, MonitorCog, Percent,
-  Phone, Settings, Shield, TrendingDown, TrendingUp, TrendingUpDown, TriangleAlert,
+  Mail, MonitorCog, Palette, Percent,
+  Phone, Search, Settings, Shield, TrendingDown, TrendingUp, TrendingUpDown, TriangleAlert,
   User, UserCheck, UserRoundCog,
   Users
 } from 'lucide-angular';
@@ -59,5 +60,12 @@ export const icons = {
     triangle: TriangleAlert
   },
   key:Key,
-  userCheck: UserCheck
+  userCheck: UserCheck,
+  search: Search,
+  filter: Funnel,
+  ellipsis:{
+    horizontal: Ellipsis,
+    vertical: EllipsisVertical
+  },
+  theme: Palette
 }

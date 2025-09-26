@@ -1,5 +1,5 @@
 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-  <app-card>
+  <app-card [className]="'hover:shadow-md transition-shadow block max-w-sm'">
     <app-card-header className="flex flex-row items-center justify-between space-y-0 pb-2">
       <app-card-title className="text-sm font-medium leading-none">Total Revenue</app-card-title>
       <app-lucid-icon-wrapper [iconName]="icons.sidebar.revenue" ></app-lucid-icon-wrapper>
@@ -12,7 +12,7 @@
       </div>
     </app-card-content>
   </app-card>
-  <app-card>
+  <app-card [className]="'hover:shadow-md transition-shadow block max-w-sm'">
     <app-card-header className="flex flex-row items-center justify-between space-y-0 pb-2">
       <app-card-title className="text-sm font-medium leading-none">Active Hotels</app-card-title>
       <app-lucid-icon-wrapper [iconName]="icons.sidebar.hotels" ></app-lucid-icon-wrapper>
@@ -25,7 +25,7 @@
       </div>
     </app-card-content>
   </app-card>
-  <app-card>
+  <app-card [className]="'hover:shadow-md transition-shadow block max-w-sm'">
     <app-card-header className="flex flex-row items-center justify-between space-y-0 pb-2">
       <app-card-title className="text-sm font-medium leading-none">Total Bookings</app-card-title>
       <app-lucid-icon-wrapper [iconName]="icons.calender" ></app-lucid-icon-wrapper>
@@ -38,7 +38,7 @@
       </div>
     </app-card-content>
   </app-card>
-  <app-card>
+  <app-card [className]="'hover:shadow-md transition-shadow block max-w-sm'">
     <app-card-header [className]="'flex flex-row items-center justify-between space-y-0 pb-2'">
       <app-card-title [className]="'text-sm font-medium leading-none'">Avg Occupancy</app-card-title>
       <app-lucid-icon-wrapper [iconName]="icons.percentage" ></app-lucid-icon-wrapper>

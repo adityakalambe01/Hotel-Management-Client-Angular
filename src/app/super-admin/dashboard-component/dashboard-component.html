@@ -1,73 +1,84 @@
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-  <app-card *ngFor="let stat of dashStats" [className]="'hover:shadow-md transition-shadow block max-w-sm'">
-    <app-card-header [className]="'flex flex-row items-center justify-between space-y-0 pb-2'">
-      <app-card-title
-        [className]="'text-sm font-medium text-muted-foreground'"
-      >
-        {{ stat.title }}
-      </app-card-title>
-
-      <app-lucid-icon-wrapper [iconName]="stat.iconName"></app-lucid-icon-wrapper>
-    </app-card-header>
-
-    <app-card-content>
-      <div class="text-2xl font-bold">
-        {{ stat.value }}
-      </div>
-
-      <div class="flex items-center text-xs text-muted-foreground mt-1 gap-1">
-        <app-lucid-icon-wrapper
-          [iconSize]="12"
-          [iconName]="stat.trend === 'up' ? icons.trending.up : icons.trending.down"
-          [className]="stat.trend === 'up' ? 'text-green-500' : 'text-red-500'">
-        </app-lucid-icon-wrapper>
-        {{ stat.change }}
-      </div>
-    </app-card-content>
-  </app-card>
-</div>
-
-
-
-Permission
-<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-  <app-card *ngFor="let stat of permissionStats">
-    <app-card-header [className]="'flex flex-row items-center justify-between space-y-0 pb-2'">
-      <app-card-title [className]="'text-sm font-medium'">{{ stat.title }}</app-card-title>
-      <app-lucid-icon-wrapper [iconName]="stat.icon" [className]="'h-4 w-4 text-muted-foreground'"></app-lucid-icon-wrapper>
-    </app-card-header>
-
-    <app-card-content>
-      <div class="text-2xl font-bold">{{ stat.value }}</div>
-      <p class="text-xs text-muted-foreground">{{ stat.subtitle }}</p>
-    </app-card-content>
-  </app-card>
-</div>
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-  <!-- Revenue Chart -->
-  <div class="bg-white rounded-2xl shadow p-4">
-    <apx-chart
-      [series]="revenueChartOptions.series"
-      [chart]="revenueChartOptions.chart"
-      [xaxis]="revenueChartOptions.xaxis!"
-      [title]="revenueChartOptions.title!"
-      [grid]="revenueChartOptions.grid!"
-    ></apx-chart>
+<div class="space-y-3">
+  <div class="mb-8">
+    <h1 class="text-3xl font-bold text-gray-900">
+      Admin Dashboard
+    </h1>
+    <p class="text-gray-600 font-[family-name:var(--font-dm-sans)]">
+      Manage all tenants, revenue, and system analytics
+    </p>
   </div>
 
-  <!-- Tenant Chart -->
-  <div class="bg-white rounded-2xl shadow p-4">
-    <apx-chart
-      [series]="tenantChartOptions.series"
-      [chart]="tenantChartOptions.chart"
-      [stroke]="tenantChartOptions.stroke!"
-      [markers]="{ size: 5 }"
-      [xaxis]="tenantChartOptions.xaxis!"
-      [title]="tenantChartOptions.title!"
-      [grid]="tenantChartOptions.grid!"
-    ></apx-chart>
-  </div>
-</div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    @for(stat of dashStats; track stat.title){
+      <app-card [className]="'hover:shadow-md transition-shadow block max-w-sm'">
+        <app-card-header [className]="'flex flex-row items-center justify-between space-y-0 pb-2'">
+          <app-card-title
+            [className]="'text-sm font-medium text-muted-foreground'"
+          >
+            {{ stat.title }}
+          </app-card-title>
 
-<app-revenue-contributors-chart/>
+          <app-lucid-icon-wrapper [iconName]="stat.iconName"></app-lucid-icon-wrapper>
+        </app-card-header>
+
+        <app-card-content>
+          <div class="text-2xl font-bold">
+            {{ stat.value }}
+          </div>
+
+          <div class="flex items-center text-xs text-muted-foreground mt-1 gap-1">
+            <app-lucid-icon-wrapper
+              [iconSize]="12"
+              [iconName]="stat.trend === 'up' ? icons.trending.up : icons.trending.down"
+              [className]="stat.trend === 'up' ? 'text-green-500' : 'text-red-500'">
+            </app-lucid-icon-wrapper>
+            {{ stat.change }}
+          </div>
+        </app-card-content>
+      </app-card>
+    }
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <app-card>
+      <app-card-header [className]="'pb-0'">
+        <app-card-title [className]="'text-lg font-semibold text-gray-900'">{{ revenueChartOptions.title?.text }}</app-card-title>
+      </app-card-header>
+      <app-card-content>
+        <!-- Revenue Chart -->
+        <apx-chart
+          [series]="revenueChartOptions.series"
+          [chart]="revenueChartOptions.chart"
+          [xaxis]="revenueChartOptions.xaxis!"
+          [title]="revenueChartOptions.title!"
+          [grid]="revenueChartOptions.grid!"
+        ></apx-chart>
+      </app-card-content>
+    </app-card>
+    <app-card [className]="''">
+      <app-card-header [className]="'pb-0'">
+        <app-card-title [className]="'text-lg font-semibold text-gray-900'">{{ tenantChartOptions.title?.text }}</app-card-title>
+      </app-card-header>
+      <app-card-content>
+        <!-- Tenant Chart -->
+        <apx-chart
+          [series]="tenantChartOptions.series"
+          [chart]="tenantChartOptions.chart"
+          [stroke]="tenantChartOptions.stroke!"
+          [markers]="{ size: 5 }"
+          [xaxis]="tenantChartOptions.xaxis!"
+          [grid]="tenantChartOptions.grid!"
+        ></apx-chart>
+      </app-card-content>
+    </app-card>
+  </div>
+
+  <section>
+    <app-revenue-contributors-chart></app-revenue-contributors-chart>
+  </section>
+
+  <section>
+    <app-tenant-management></app-tenant-management>
+  </section>
+
+</div>

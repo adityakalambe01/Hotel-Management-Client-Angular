@@ -1,6 +1,6 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
   @for(stat of stats; track stat.title){
-    <app-card>
+    <app-card [className]="'hover:shadow-md transition-shadow block max-w-sm'">
       <app-card-header [className]="'flex flex-row items-center justify-between space-y-0 pb-2'">
         <app-card-title [className]="'text-sm font-medium text-gray-600'">{{ stat.title }}</app-card-title>
         <app-lucid-icon-wrapper [iconName]="stat.iconName" [iconSize]="20" [className]="stat.color" [strokeWidth]="2.2"></app-lucid-icon-wrapper>

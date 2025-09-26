@@ -21,7 +21,10 @@ export class SuperAdmin {
       icon: icons.settings.normal,
       children: [
         { label: 'System', icon: icons.settings.system, route: '/settings/system' },
-        { label: 'Profile', icon: icons.settings.profile, route: '/settings/profile' }
+        { label: 'Profile', icon: icons.settings.profile, route: '/settings/profile' },
+        { label: 'Permissions', icon: icons.sidebar.shield, route: '/settings/permissions' },
+        { label: 'Theme', icon: icons.theme, route: '/settings/theme' },
+
       ]
     },
     { label: 'Kanban', icon: icons.sidebar.analytics, badge: 'Pro', route: '/kanban' },

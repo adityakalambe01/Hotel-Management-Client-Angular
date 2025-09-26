@@ -1,0 +1,84 @@
+<app-card>
+  <app-card-header [className]="'pb-0'">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
+      <app-card-title [className]="'font-[family-name:var(--font-space-grotesk)]'">Tenant Management</app-card-title>
+      <div class="flex items-center space-x-2">
+        <div class="relative">
+          <app-lucid-icon-wrapper [iconName]="icons.search" [className]="'absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4'"/>
+          <input
+            placeholder="Search tenants..."
+            value=""
+            class="pl-10 w-64"
+          />
+        </div>
+        <button class="flex gap-2 items-center px-3 py-1.5 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition">
+          <app-lucid-icon-wrapper [iconName]="icons.filter"/>
+          Filter
+        </button>
+      </div>
+    </div>
+  </app-card-header>
+  <app-card-content>
+
+
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th scope="col" class="px-6 py-3">
+            Tenant
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Hotels
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Revenue
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Status
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Plan
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Join Date
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Actions
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        @for(tenant of tenants; track tenant.id){
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              {{tenant.name}}
+            </th>
+            <td class="px-6 py-4">
+              {{ tenant.hotels }}
+            </td>
+            <td class="px-6 py-4">
+              {{ tenant.revenue }}
+            </td>
+            <td class="px-6 py-4">
+              {{ tenant.status }}
+            </td>
+            <td class="px-6 py-4">
+              {{ tenant.plan }}
+            </td>
+            <td class="px-6 py-4">
+              {{ tenant.joinDate }}
+            </td>
+            <td class="px-6 py-4">
+              <app-lucid-icon-wrapper [iconName]="icons.ellipsis.horizontal"/>
+            </td>
+          </tr>
+        }
+        </tbody>
+      </table>
+    </div>
+
+
+  </app-card-content>
+</app-card>

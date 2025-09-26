@@ -8,6 +8,7 @@ import {
   ApexTooltip, NgApexchartsModule
 } from 'ng-apexcharts';
 import {CommonModule, CurrencyPipe} from '@angular/common';
+import {CardModule} from '../../../shared/ui/card/card.module';
 
 export type PieChartOptions = {
   series: ApexNonAxisChartSeries;
@@ -22,7 +23,7 @@ export type PieChartOptions = {
 
 @Component({
   selector: 'app-revenue-contributors-chart',
-  imports: [NgApexchartsModule, CurrencyPipe, CommonModule],
+  imports: [NgApexchartsModule, CurrencyPipe, CommonModule, CardModule],
   templateUrl: './revenue-contributors-chart.html',
   styleUrl: './revenue-contributors-chart.css'
 })

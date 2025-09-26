@@ -5,7 +5,7 @@ import {Component, Input} from '@angular/core';
   standalone: false,
   template: `
     <div
-      [ngClass]="[className, defaultClasses]"
+      [ngClass]="[(className|| defaultGap), defaultClasses]"
     >
       <ng-content></ng-content>
     </div>
@@ -13,8 +13,8 @@ import {Component, Input} from '@angular/core';
 })
 export class Card {
   @Input() className = '';
-  protected defaultClasses:string = "flex flex-col gap-6 rounded-xl bg-white py-6 shadow-sm border border-gray-200 dark:bg-gray-800 dark:border-gray-700";
-  val = 'max-w-sm p-6'
+  protected defaultClasses:string = "flex flex-col rounded-xl bg-white py-6 shadow-sm border border-gray-200 dark:bg-gray-800 dark:border-gray-700";
+  protected defaultGap:string = 'gap-6'
 
 }
 
