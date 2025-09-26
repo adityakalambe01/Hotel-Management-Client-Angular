@@ -43,3 +43,31 @@ Permission
     </app-card-content>
   </app-card>
 </div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+  <!-- Revenue Chart -->
+  <div class="bg-white rounded-2xl shadow p-4">
+    <apx-chart
+      [series]="revenueChartOptions.series"
+      [chart]="revenueChartOptions.chart"
+      [xaxis]="revenueChartOptions.xaxis!"
+      [title]="revenueChartOptions.title!"
+      [grid]="revenueChartOptions.grid!"
+    ></apx-chart>
+  </div>
+
+  <!-- Tenant Chart -->
+  <div class="bg-white rounded-2xl shadow p-4">
+    <apx-chart
+      [series]="tenantChartOptions.series"
+      [chart]="tenantChartOptions.chart"
+      [stroke]="tenantChartOptions.stroke!"
+      [markers]="{ size: 5 }"
+      [xaxis]="tenantChartOptions.xaxis!"
+      [title]="tenantChartOptions.title!"
+      [grid]="tenantChartOptions.grid!"
+    ></apx-chart>
+  </div>
+</div>
+
+<app-revenue-contributors-chart/>
