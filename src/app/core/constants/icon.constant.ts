@@ -105,7 +105,18 @@ import {
   CirclePlus,
   CarFront,
   BottleWine,
-  ConciergeBell
+  ConciergeBell,
+  Crown,
+  Briefcase,
+  Dices,
+  Plane,
+  Watch,
+  University,
+  Snowflake,
+  WalletMinimal,
+  Leaf,
+  Box,
+  Umbrella
 } from 'lucide-angular';
 
 
@@ -276,6 +287,26 @@ export const icons = {
       }
     }
   },
-  hotelCategory: Hotel,
-
+  hotelCategory: {
+    luxuryHotel: Crown,
+    resort: Umbrella,
+    boutiqueHotel: Gem,
+    casinoHotel: Dices,
+    wellnessNSpaHotel: Bubbles,
+    heritageHotel: Landmark,
+    businessHotel: Briefcase,
+    airportHotel: Plane,
+    extendedStayHotel: Watch,
+    allInclusiveHotel: Utensils,
+    servicedApartment: Building,
+    conventionHotel: University,
+    skiResortHotel: Snowflake,
+    beachfrontHotel: Waves,
+    budgetHotel: WalletMinimal,
+    hostel: Users,
+    motel: Car,
+    bedNBreakfast_BNB: Coffee,
+    capsuleHotel: Box,
+    ecoHotel: Leaf
+  }
 }
