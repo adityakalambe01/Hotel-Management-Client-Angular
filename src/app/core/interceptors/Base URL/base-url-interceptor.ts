@@ -1,6 +1,7 @@
 import { HttpInterceptorFn } from '@angular/common/http';
+import {environment} from '../../../../environments/environment';
 
-const baseUrl = 'http://localhost:3000/api/dev';
+const baseUrl = environment.API_URL;
 
 export const baseUrlInterceptor: HttpInterceptorFn = (req, next) => {
   const isAbsolute = /^http/.test(req.url);
