@@ -8,3 +8,26 @@
 @source "../node_modules/flowbite";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* Entire scrollbar */
+::-webkit-scrollbar {
+  width: 5px; /* makes the scrollbar thinner */
+  height: 5px; /* for horizontal scrollbars */
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* light background so it's visible */
+  border-radius: 4px;
+}
+
+/* Handle (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* darker color so it stands out */
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
