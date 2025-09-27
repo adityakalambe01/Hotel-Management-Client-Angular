@@ -66,7 +66,46 @@ import {
   Antenna,
   Luggage,
   PawPrint,
-  Cigarette
+  Cigarette,
+  Gem,
+  Dumbbell,
+  Bubbles,
+  Hospital,
+  Wind,
+  Bath,
+  Gamepad2,
+  Swords,
+  LandPlot,
+  Space,
+  LibraryBig,
+  Soup,
+  HandPlatter,
+  Wine,
+  Utensils,
+  Caravan,
+  CupSoda,
+  UtensilsCrossed,
+  Landmark,
+  Columns4,
+  Store,
+  Beer,
+  Handshake,
+  BriefcaseBusiness,
+  Presentation,
+  Printer,
+  Network,
+  ScanEye,
+  Accessibility,
+  BookA,
+  Ear,
+  CircleStar,
+  Car,
+  IdCardLanyard,
+  Building,
+  CirclePlus,
+  CarFront,
+  BottleWine,
+  ConciergeBell
 } from 'lucide-angular';
 
 
@@ -170,6 +209,69 @@ export const icons = {
           luggageStorage: Luggage,
           petFriendly: PawPrint,
           smokingArea: Cigarette
+        }
+      },
+      leisureNWellness:{
+        base: Gem,
+        amenities:{
+          swimmingPool: Waves,
+          gym: Dumbbell,
+          spa: Bubbles,
+          sauna: Wind,
+          Jacuzzi: Bath,
+          gameRoom: Gamepad2,
+          playground: Swords,
+          sportsCourt: LandPlot,
+          yogaArea: Space,
+          library: LibraryBig
+        }
+      },
+      foodNBeverage:{
+        base: HandPlatter,
+        amenities:{
+          restaurant: Utensils,
+          bar: Wine,
+          breakfast: Coffee,
+          roomService: Caravan,
+          coffeeShop: CupSoda,
+          buffet: UtensilsCrossed,
+          banquetHall: Landmark,
+          BBQFacilities: Columns4,
+          vendingMachine: Store,
+          miniBar: Beer,
+        }
+      },
+      businessNEvents:{
+        base: Handshake,
+        amenities:{
+          meetingRoom: BriefcaseBusiness,
+          conferenceHall: Presentation,
+          businessCenter: Printer,
+          coworkingSpace: Users,
+          highSpeedInternet: Network,
+        }
+      },
+      accessibility:{
+        base: Accessibility,
+        amenities:{
+          wheelchairAccessible: Accessibility,
+          accessibilityBathroom: Bath,
+          brailleSignage: BookA,
+          hearingAssistance: Ear,
+          elevatorAccess: CableCar
+        }
+      },
+      luxuryNPremium:{
+        base: CircleStar,
+        amenities:{
+          valetParking: Car,
+          privatePool: Waves,
+          butlerService: IdCardLanyard,
+          rooftopLounge: Building,
+          helipad: CirclePlus,
+          limousineService: CarFront,
+          wineCellar: BottleWine,
+          personalConcierge: ConciergeBell
         }
       }
     }
