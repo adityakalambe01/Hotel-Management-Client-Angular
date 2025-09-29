@@ -177,112 +177,112 @@ export const icons = {
   amenityCategory: {
     base: HousePlug,
     categories:{
-      basic:{
+      Basic:{
         base: BookCheck,
         amenities:{
-          wifi: Wifi,
-          ac: AirVent,
-          heating: Heater,
-          electricityBackup: BatteryPlus,
-          housekeeping: BrushCleaning,
-          toiletries: SoapDispenserDroplet,
-          hotWater: Waves,
-          drinkingWater: GlassWater,
-          linenNTowels: BedDouble,
-          ironNBoard: Shredder
+          'Wi-Fi': Wifi,
+          'Air Conditioning': AirVent,
+          Heating: Heater,
+          'Electricity Backup': BatteryPlus,
+          Housekeeping: BrushCleaning,
+          Toiletries: SoapDispenserDroplet,
+          'Hot Water': Waves,
+          'Drinking Water': GlassWater,
+          'Linen & Towels': BedDouble,
+          'Iron & Board': Shredder
         }
       },
-      room:{
+      Room:{
         base: DoorOpen,
         amenities: {
-          television: Tv,
-          miniFridge: Refrigerator,
-          microwave: Microwave,
-          workDesk: MonitorSmartphone,
-          balcony: Grid2X2,
-          wardrobe: DoorClosed,
-          safe: Vault,
-          coffeeMaker: Coffee,
-          kitchenette: CookingPot,
-          bedsideLap: Lamp,
+          Television: Tv,
+          'Mini Fridge': Refrigerator,
+          Microwave: Microwave,
+          'Work Desk': MonitorSmartphone,
+          Balcony: Grid2X2,
+          Wardrobe: DoorClosed,
+          Safe: Vault,
+          'Coffee Maker': Coffee,
+          Kitchenette: CookingPot,
+          'Bedside Lamp': Lamp,
         }
       },
-      property:{
+      Property:{
         base: MapPinHouse,
         amenities: {
-          parking: CircleParking,
-          elevator: CableCar,
-          laundry: Shirt,
-          security: ShieldUser,
-          reception: User,
-          garden: AlignHorizontalSpaceBetween,
-          terrace: Antenna,
-          luggageStorage: Luggage,
-          petFriendly: PawPrint,
-          smokingArea: Cigarette
+          Parking: CircleParking,
+          Elevator: CableCar,
+          Laundry: Shirt,
+          Security: ShieldUser,
+          Reception: User,
+          Garden: AlignHorizontalSpaceBetween,
+          Terrace: Antenna,
+          'Luggage Storage': Luggage,
+          'Pet Friendly': PawPrint,
+          'Smoking Area': Cigarette
         }
       },
-      leisureNWellness:{
+      'Leisure & Wellness':{
         base: Gem,
         amenities:{
-          swimmingPool: Waves,
-          gym: Dumbbell,
-          spa: Bubbles,
-          sauna: Wind,
+          'Swimming Pool': Waves,
+          Gym: Dumbbell,
+          Apa: Bubbles,
+          Sauna: Wind,
           Jacuzzi: Bath,
-          gameRoom: Gamepad2,
-          playground: Swords,
-          sportsCourt: LandPlot,
-          yogaArea: Space,
-          library: LibraryBig
+          'Game Room': Gamepad2,
+          Playground: Swords,
+          'Sports Court': LandPlot,
+          'Yoga Area': Space,
+          Library: LibraryBig
         }
       },
-      foodNBeverage:{
+      'Food & Beverage':{
         base: HandPlatter,
         amenities:{
-          restaurant: Utensils,
-          bar: Wine,
-          breakfast: Coffee,
-          roomService: Caravan,
-          coffeeShop: CupSoda,
-          buffet: UtensilsCrossed,
-          banquetHall: Landmark,
-          BBQFacilities: Columns4,
-          vendingMachine: Store,
-          miniBar: Beer,
+          Restaurant: Utensils,
+          Bar: Wine,
+          Breakfast: Coffee,
+          'Room Service': Caravan,
+          'Coffee Shop': CupSoda,
+          Buffet: UtensilsCrossed,
+          'Banquet Hall': Landmark,
+          'BBQ Facilities': Columns4,
+          'Vending Machines': Store,
+          'Mini Bar': Beer,
         }
       },
-      businessNEvents:{
+      'Business & Events':{
         base: Handshake,
         amenities:{
-          meetingRoom: BriefcaseBusiness,
-          conferenceHall: Presentation,
-          businessCenter: Printer,
-          coworkingSpace: Users,
-          highSpeedInternet: Network,
+          'Meeting Room': BriefcaseBusiness,
+          'Conference Hall': Presentation,
+          'Business Center': Printer,
+          'Coworking Space': Users,
+          'High-speed Internet': Network,
         }
       },
-      accessibility:{
+      Accessibility:{
         base: Accessibility,
         amenities:{
-          wheelchairAccessible: Accessibility,
-          accessibilityBathroom: Bath,
-          brailleSignage: BookA,
-          hearingAssistance: Ear,
-          elevatorAccess: CableCar
+          'Wheelchair Access': Accessibility,
+          'Accessible Bathroom': Bath,
+          'Braille Signage': BookA,
+          'Hearing Assistance': Ear,
+          'Elevator Access': CableCar
         }
       },
-      luxuryNPremium:{
+      'Luxury & Premium':{
         base: CircleStar,
         amenities:{
-          valetParking: Car,
-          privatePool: Waves,
-          butlerService: IdCardLanyard,
-          rooftopLounge: Building,
-          helipad: CirclePlus,
-          limousineService: CarFront,
-          wineCellar: BottleWine,
-          personalConcierge: ConciergeBell
+          'Valet Parking': Car,
+          'Private Pool': Waves,
+          'Butler Service': IdCardLanyard,
+          'Rooftop Lounge': Building,
+          'Helipad': CirclePlus,
+          'Limousine Service': CarFront,
+          'Wine Cellar': BottleWine,
+          'Personal Concierge': ConciergeBell
         }
       }
     }
