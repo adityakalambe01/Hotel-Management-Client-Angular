@@ -3,13 +3,15 @@ import {CardModule} from '../../shared/ui/card/card.module';
 import {LucidIconWrapper} from '../../shared/components/lucid-icon-wrapper/lucid-icon-wrapper';
 import {icons} from '../../core/constants';
 import {TabsModule} from '../../shared/ui/tabs/tabs.module';
+import {HotelCategory} from './hotel-category/hotel-category';
 
 @Component({
   selector: 'app-hotels-component',
   imports: [
     CardModule,
     LucidIconWrapper,
-    TabsModule
+    TabsModule,
+    HotelCategory
   ],
   templateUrl: './hotels-component.html',
   styleUrl: './hotels-component.css'
