@@ -4,6 +4,7 @@ import {LucidIconWrapper} from '../../shared/components/lucid-icon-wrapper/lucid
 import {icons} from '../../core/constants';
 import {TabsModule} from '../../shared/ui/tabs/tabs.module';
 import {HotelCategory} from './hotel-category/hotel-category';
+import {HotelAmenities} from './hotel-amenities/hotel-amenities';
 
 @Component({
   selector: 'app-hotels-component',
@@ -11,7 +12,8 @@ import {HotelCategory} from './hotel-category/hotel-category';
     CardModule,
     LucidIconWrapper,
     TabsModule,
-    HotelCategory
+    HotelCategory,
+    HotelAmenities
   ],
   templateUrl: './hotels-component.html',
   styleUrl: './hotels-component.css'
