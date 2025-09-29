@@ -1,4 +1,4 @@
-<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
   <app-card [className]="'hover:shadow-md transition-shadow block max-w-sm'">
     <app-card-header [className]="'flex flex-row items-center justify-between space-y-0 pb-2'">
       <app-card-title [className]="'text-sm font-medium leading-none'">Total Hotels</app-card-title>
@@ -60,7 +60,7 @@
   </app-tab-panel>
 
   <app-tab-panel id="amenity-categories">
-    <p>Amenity Categories</p>
+    <app-hotel-amenities/>
   </app-tab-panel>
 
 </app-tab-group>

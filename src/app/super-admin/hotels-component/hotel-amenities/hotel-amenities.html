@@ -1,0 +1,32 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  @for (amenitiesWithCategory of amenities; track amenitiesWithCategory._id) {
+    <app-card
+      [className]="'rounded-2xl shadow-sm hover:shadow-md transition bg-gradient-to-br from-gray-50 to-white p-5'"
+    >
+      <!-- Category Header -->
+      <app-card-header [className]="'flex items-center gap-3 pb-3 border-b'">
+        <app-lucid-icon-wrapper [iconSize]="28" [iconName]="getIcon(amenitiesWithCategory.category.name)" />
+        <app-card-title [className]="'font-semibold text-lg text-gray-800'">
+          {{ amenitiesWithCategory.category.name }}
+        </app-card-title>
+      </app-card-header>
+
+      <!-- Amenities List -->
+      <app-card-content [className]="'pt-4'">
+        <div class="flex flex-wrap gap-2">
+          @for (amenity of amenitiesWithCategory.amenities; track amenity._id) {
+            <span
+              class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full
+                     bg-gray-100 text-gray-700 text-xs font-medium
+                     hover:bg-gray-200 hover:shadow-sm transition cursor-pointer"
+              title="{{ amenity.description }}"
+            >
+              <app-lucid-icon-wrapper [iconName]="getIcon(amenitiesWithCategory.category.name, amenity.name)" [iconSize]="16" />
+              {{ amenity.name }}
+            </span>
+          }
+        </div>
+      </app-card-content>
+    </app-card>
+  }
+</div>
