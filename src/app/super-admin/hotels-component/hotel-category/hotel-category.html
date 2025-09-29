@@ -1,12 +1,17 @@
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
   @for (hotelCategory of hotelCategories; track hotelCategory._id) {
-    <app-card>
-      <app-card-header [className]="'flex items-center !py-0 justify-between'">
-        <app-lucid-icon-wrapper [iconName]="getIcon(hotelCategory.name)" [iconSize]="30"></app-lucid-icon-wrapper>
-        <app-card-title [className]="'text-lg font-medium'">
-          {{ hotelCategory.name }}
-        </app-card-title>
-      </app-card-header>
+    <app-card
+      [className]="'flex flex-col items-center justify-center p-6 rounded-2xl shadow-sm hover:shadow-md hover:scale-[1.02] transition bg-gradient-to-br from-gray-50 to-white'"
+    >
+      <app-lucid-icon-wrapper
+        [iconName]="getIcon(hotelCategory.name)"
+        [iconSize]="40"
+        class="text-primary mb-3"
+      ></app-lucid-icon-wrapper>
+
+      <app-card-title [className]="'text-base font-semibold text-gray-700'">
+        {{ hotelCategory.name }}
+      </app-card-title>
     </app-card>
   }
 </div>
