@@ -5,6 +5,8 @@ import {authGuard} from './core/guard/auth/auth-guard';
 import {noAuthGuard} from './core/guard/noAuth/no-auth-guard';
 import {superAdminRoutes} from './super-admin/super-admin.routes';
 import {SuperAdmin} from './super-admin/super-admin';
+import {emailRoutes} from './components/email/email.routes';
+import {NotFound} from './components/not-found/not-found';
 
 export const routes: Routes = [
   {
@@ -23,4 +25,14 @@ export const routes: Routes = [
       ...superAdminRoutes
     ]
   },
+  ...emailRoutes,
+  {
+    path: 'page-not-found',
+    component: NotFound
+  },
+  {
+    path: '**',
+    redirectTo: 'page-not-found',
+    pathMatch: 'full'
+  }
 ];
