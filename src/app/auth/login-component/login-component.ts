@@ -1,12 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {CommonModule} from '@angular/common';
-import {RouterLink} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import {AuthService} from '../../core/services/http/auth/auth-service';
 import {IHttpErrorResponse, IHttpSuccessResponse} from '../../core/models';
 import {Subscription} from 'rxjs';
 import {LucidIconWrapper} from '../../shared/components/lucid-icon-wrapper/lucid-icon-wrapper';
-import {icons} from '../../core/constants/icon.constant';
+import {icons} from '../../core/constants';
 
 @Component({
   selector: 'app-login-component',
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit, OnDestroy{
 
   private loginSubscription!:Subscription;
 
-  constructor(private authService:AuthService) {
+  constructor(private authService:AuthService, private router: Router) {
   }
 
   ngOnInit() {
@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit, OnDestroy{
     this.loginSubscription = this.authService.login({email, password}).subscribe({
       next: (response:IHttpSuccessResponse)=>{
         this.authService.setToken(response.data.token);
+        this.router.navigate(['/']);
       },
       error: (error:IHttpErrorResponse)=>{
         console.error(error);
