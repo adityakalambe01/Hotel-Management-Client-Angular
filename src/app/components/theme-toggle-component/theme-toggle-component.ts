@@ -12,7 +12,12 @@ export class ThemeToggleComponent {
   constructor(private theme:ThemeModeSwitcher) {
   }
   toggleTheme() {
+
     this.theme.toggleThemeMode();
+  }
+
+  isDarkMode(){
+    return this.theme.getThemeMode() === 'dark'
   }
 
 }
