@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpParams} from '@angular/common/http';
 import {catchError, Observable, Subscription, throwError} from 'rxjs';
 import {IHttpErrorResponse} from '../../models';
 
@@ -11,8 +11,9 @@ export class HttpClientService {
   constructor(private http: HttpClient) {
   }
 
-  protected get<TResponse>(url: string) : Observable<TResponse>{
-    return this.http.get<TResponse>(url).pipe(catchError(this.handleError));
+  protected get<TResponse>(url: string, queryParams:any = {}) : Observable<TResponse>{
+    const params = new HttpParams({fromObject: queryParams});
+    return this.http.get<TResponse>(url, {params}).pipe(catchError(this.handleError));
   }
 
   protected post<TRequest, TResponse>(url:string, data:TRequest) : Observable<TResponse>{
