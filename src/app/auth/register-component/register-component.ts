@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {RouterLink} from '@angular/router';
-import {Subscription} from 'rxjs';
+import {finalize, Subscription} from 'rxjs';
 import {AuthService} from '../../core/services/http/auth/auth-service';
 import {IHttpErrorResponse, IHttpSuccessResponse} from '../../core/models';
 import {icons} from '../../core/constants/icon.constant';
@@ -50,7 +50,7 @@ export class RegisterComponent implements OnInit, OnDestroy{
     if (this.registerForm.valid) {
       this.isLoading = true;
       const {confirmPassword, terms, ...restFormData} = this.registerForm.value;
-      this.registerSubscription = this.authService.register(restFormData).subscribe({
+      this.registerSubscription = this.authService.register(restFormData).pipe(finalize(()=> this.isLoading=false)).subscribe({
         next: (response: IHttpSuccessResponse) => {
           console.log(response);
         },

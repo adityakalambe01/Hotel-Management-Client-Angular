@@ -4,7 +4,7 @@ import {CommonModule} from '@angular/common';
 import {Router, RouterLink} from '@angular/router';
 import {AuthService} from '../../core/services/http/auth/auth-service';
 import {IHttpErrorResponse, IHttpSuccessResponse} from '../../core/models';
-import {Subscription} from 'rxjs';
+import {finalize, Subscription} from 'rxjs';
 import {LucidIconWrapper} from '../../shared/components/lucid-icon-wrapper/lucid-icon-wrapper';
 import {icons} from '../../core/constants';
 
@@ -43,7 +43,8 @@ export class LoginComponent implements OnInit, OnDestroy{
 
   handleSubmit(){
     const {email, password} = this.loginForm.value;
-    this.loginSubscription = this.authService.login({email, password}).subscribe({
+    this.isLoading = true;
+    this.loginSubscription = this.authService.login({email, password}).pipe(finalize(()=> this.isLoading = false)).subscribe({
       next: (response:IHttpSuccessResponse)=>{
         this.authService.setToken(response.data.token);
         this.router.navigate(['/']);
