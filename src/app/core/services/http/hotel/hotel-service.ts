@@ -19,4 +19,8 @@ export class HotelService extends HttpClientService{
   getHotelCategories(): Observable<IHttpSuccessResponse<any>>{
     return this.get<IHttpSuccessResponse<any>>(`${this.hotelCategoryPrefixURL}`);
   }
+
+  allHotelCategories(): Observable<IHttpSuccessResponse>{
+    return this.get<IHttpSuccessResponse>(`${this.hotelCategoryPrefixURL}/all`);
+  }
 }
