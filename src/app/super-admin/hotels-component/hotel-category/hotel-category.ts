@@ -20,9 +20,9 @@ export class HotelCategory implements OnInit, OnDestroy{
   constructor(private hotelService: HotelService, private utils:Utils) {
   }
   ngOnInit() {
-    this.hotelCategorySubscription = this.hotelService.getHotelCategories().subscribe({
+    this.hotelCategorySubscription = this.hotelService.allHotelCategories().subscribe({
       next: (response: IHttpSuccessResponse)=>{
-        this.hotelCategories = response.data.results;
+        this.hotelCategories = response.data;
       },
       error: (error: IHttpErrorResponse)=>{
         console.log(error)
