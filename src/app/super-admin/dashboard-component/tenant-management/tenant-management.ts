@@ -66,4 +66,11 @@ export class TenantManagement {
       joinDate: "2023-04-12",
     },
   ]
+
+  openDropdownId: number | null = null;
+
+  toggleDropdown(id: number) {
+    this.openDropdownId = this.openDropdownId === id ? null : id;
+  }
+
 }
