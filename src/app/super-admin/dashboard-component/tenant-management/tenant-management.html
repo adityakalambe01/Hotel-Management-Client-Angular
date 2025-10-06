@@ -22,7 +22,7 @@
 
 
 
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg overflow-visible">
       <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
@@ -70,9 +70,27 @@
             <td class="px-6 py-4">
               {{ tenant.joinDate }}
             </td>
-            <td class="px-6 py-4">
-              <app-lucid-icon-wrapper [iconName]="icons.ellipsis.horizontal"/>
+            <td class="px-6 py-4 relative">
+              <button
+                (click)="toggleDropdown(tenant.id)"
+                class="inline-flex items-center p-2 text-sm font-medium text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 dark:focus:ring-gray-600"
+                type="button">
+                <app-lucid-icon-wrapper [iconName]="icons.ellipsis.horizontal"></app-lucid-icon-wrapper>
+              </button>
+
+              <div
+                *ngIf="openDropdownId === tenant.id"
+                class="absolute right-0 mt-2 z-20 bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-40 dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+                  <li><button class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Reply</button></li>
+                  <li><button class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Forward</button></li>
+                  <li><button class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Copy</button></li>
+                  <li><button class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</button></li>
+                  <li><button class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Delete</button></li>
+                </ul>
+              </div>
             </td>
+
           </tr>
         }
         </tbody>
